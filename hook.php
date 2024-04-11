@@ -236,7 +236,7 @@ function plugin_geststock_getAddSearchOptionsNew($itemtype) {
                  'name'       =>  __('Length', 'geststock'),
                  'datatype'   =>  'number',
                  'joinparams' => ['jointype'  => 'child',
-                                  'condition' => [NEWTABLE.'.itemtype' => $obj],
+                                  'condition' => ['NEWTABLE.itemtype' => $obj],
                                   'linkfield' => 'models_id']];
 
        $tab[] = ['id'         => '4',
