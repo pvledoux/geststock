@@ -38,6 +38,13 @@ class PluginGeststockTicket {
           && ($ticket->input['status'] == CommonITILObject::CLOSED)) {
          $reservation = new PluginGeststockReservation();
          $reservation->transfertItem($ticket->input['id']);
+         // transfert only if not done
+         foreach ($DB->request('glpi_plugin_geststock_reservations',
+                               ['tickets_id' => $ticket->input['id']]) as $resa) {
+             if ($reservation->getFromDB($resa['id']) && is_null($resa['receipt_date'])) {
+                $reservation->transfertItem($ticket->input['id']);
+             }
+         }
       }
    }
 
