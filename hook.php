@@ -99,7 +99,7 @@ function plugin_geststock_uninstall() {
    include_once(Plugin::getPhpDir('geststock')."/inc/specification.class.php");
    PluginGeststockSpecification::uninstall();
 
-   include_once(GLPI_ROOT."/plugins/geststock/inc/reservation_item_number.class.php");
+   include_once(Plugin::getPhpDir('geststock')."/inc/reservation_item_number.class.php");
    PluginGeststockReservation_Item_Number::uninstall();
 
    include_once(Plugin::getPhpDir('geststock')."/inc/menu.class.php");
