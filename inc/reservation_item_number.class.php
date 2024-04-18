@@ -101,7 +101,6 @@ class PluginGeststockReservation_Item_Number extends CommonDBChild {
       global $DB;
 
       $tables = ['glpi_plugin_geststock_reservations_items_numbers'];
-
       foreach ($tables as $table) {
          $query = "DROP TABLE IF EXISTS `$table`";
          $DB->queryOrDie($query, $DB->error());
